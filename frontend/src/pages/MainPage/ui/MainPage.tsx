@@ -52,7 +52,9 @@ export const MainPage = () => {
 				Поиск
 			</Button>
 			<Employee name={''} telephone={''} email={''} />
-			<Flow slides={slides} />
+			<div className={cls.container}>
+				<Flow />
+			</div>
 		</div>
 	)
 }
