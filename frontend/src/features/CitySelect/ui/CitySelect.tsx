@@ -1,4 +1,6 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material'
+
+const list_city =['Москва','Оренбург','Орск','Волгоград']
 export const CitySelect = () => {
 	return (
 		<FormControl fullWidth>
@@ -10,9 +12,9 @@ export const CitySelect = () => {
 				label='Город'
 				onChange={() => ''}
 			>
-				<MenuItem value={10}>Ten</MenuItem>
-				<MenuItem value={20}>Twenty</MenuItem>
-				<MenuItem value={30}>Thirty</MenuItem>
+				{
+				list_city.map((data, key)=><MenuItem key={key} value={10}>{data} </MenuItem>)
+				}
 			</Select>
 		</FormControl>
 	)

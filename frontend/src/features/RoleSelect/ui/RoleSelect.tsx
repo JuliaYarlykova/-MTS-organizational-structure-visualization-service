@@ -1,4 +1,6 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material'
+
+const list_role=['аналитика','бэк-офис','Дизайнер','обслуживание','продажи','руководство','тестирование','backend','frontend']
 export const RoleSelect = () => {
 	return (
 		<FormControl fullWidth>
@@ -10,9 +12,9 @@ export const RoleSelect = () => {
 				label='Роль'
 				onChange={() => ''}
 			>
-				<MenuItem value={10}>Ten</MenuItem>
-				<MenuItem value={20}>Twenty</MenuItem>
-				<MenuItem value={30}>Thirty</MenuItem>
+			{
+				list_role.map((data, key)=><MenuItem key={key} value={10}>{data} </MenuItem>)
+			}
 			</Select>
 		</FormControl>
 	)

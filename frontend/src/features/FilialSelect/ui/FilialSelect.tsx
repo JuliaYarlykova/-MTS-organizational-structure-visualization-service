@@ -1,4 +1,5 @@
 import { FormControl, InputLabel, Select, MenuItem } from '@mui/material'
+const list_filial =['Центральный офис','Оренбургская область','Волгоградская область']
 export const FilialSelect = () => {
 	return (
 		<FormControl fullWidth>
@@ -10,9 +11,9 @@ export const FilialSelect = () => {
 				label='Департамент'
 				onChange={() => ''}
 			>
-				<MenuItem value={10}>Ten</MenuItem>
-				<MenuItem value={20}>Twenty</MenuItem>
-				<MenuItem value={30}>Thirty</MenuItem>
+				{
+				list_filial.map((data, key)=><MenuItem key={key} value={10}>{data} </MenuItem>)
+				}
 			</Select>
 		</FormControl>
 	)
