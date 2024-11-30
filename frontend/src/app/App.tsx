@@ -1,5 +1,4 @@
 import { Suspense } from 'react'
-import './App.css'
 import { MainLayout } from '@/shared/layouts'
 import AppRouter from './providers/router/ui/AppRouter'
 
