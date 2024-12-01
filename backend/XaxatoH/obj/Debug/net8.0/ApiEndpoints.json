@@ -1,0 +1,96 @@
+[
+  {
+    "ContainingType": "XaxatoH.Controllers.SearchController",
+    "Method": "GetByFilter",
+    "RelativePath": "Search/filter",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dep",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "block",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "back",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "city",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "role",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "System.Collections.Generic.IEnumerable\u00601[[XaxatoH.Models.table, XaxatoH, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "XaxatoH.Controllers.SearchController",
+    "Method": "SearchFi",
+    "RelativePath": "Search/fio/{str}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "str",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "XaxatoH.Controllers.SearchController",
+    "Method": "GetHieById",
+    "RelativePath": "Search/hierarchy/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "XaxatoH.Controllers.SearchController",
+    "Method": "GetById",
+    "RelativePath": "Search/id/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  }
+]
