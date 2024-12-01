@@ -52,7 +52,7 @@ namespace XaxatoH.Controllers
       }
 
       var matchedPeople = res.Where(p =>
-            fi.Contains(p.Surname) && fi.Contains(p.Name)).ToList();
+            fi.Contains(p.Surname) && fi.Contains(p.Name)).Distinct().ToList();
 
       return !matchedPeople.IsNullOrEmpty() ? new JsonResult(matchedPeople) : new JsonResult(res);
     }
@@ -87,32 +87,32 @@ namespace XaxatoH.Controllers
 
       if (!string.IsNullOrEmpty(dep))
       {
-        queryBuilder.Append(" AND Subdiv1 = @Depart");
-        parameters.Add("@Depart", dep);
+        queryBuilder.Append(" AND UPPER(TRIM(Subdiv1)) = UPPER(@Depart)");
+        parameters.Add("@Depart", dep.Trim());
       }
 
       if (!string.IsNullOrEmpty(block))
       {
-        queryBuilder.Append(" AND Func_block = @Block");
-        parameters.Add("@Block", block);
+        queryBuilder.Append(" AND UPPER(TRIM(Func_block)) = UPPER(@Block)");
+        parameters.Add("@Block", block.Trim());
       }
 
       if (!string.IsNullOrEmpty(back))
       {
-        queryBuilder.Append(" AND Background = @Background");
-        parameters.Add("@Background", back);
+        queryBuilder.Append(" AND UPPER(TRIM(Background)) = UPPER(@Background)");
+        parameters.Add("@Background", back.Trim());
       }
 
       if (!string.IsNullOrEmpty(city))
       {
-        queryBuilder.Append(" AND City = @City");
-        parameters.Add("@City", city);
+        queryBuilder.Append(" AND UPPER(TRIM(City)) = UPPER(@City)");
+        parameters.Add("@City", city.Trim());
       }
 
       if (!string.IsNullOrEmpty(role))
       {
-        queryBuilder.Append(" AND Role = @Role");
-        parameters.Add("@Role", role);
+        queryBuilder.Append(" AND UPPER(TRIM(Role)) = UPPER(@Role)");
+        parameters.Add("@Role", role.Trim());
       }
 
       var query = queryBuilder.ToString();

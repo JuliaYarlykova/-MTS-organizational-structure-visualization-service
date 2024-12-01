@@ -38,7 +38,8 @@
               "RelativeToolTip": "XaxatoH\\appsettings.json",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-30T12:18:25.709Z"
+              "WhenOpened": "2024-11-30T12:18:25.709Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -48,9 +49,10 @@
               "RelativeDocumentMoniker": "XaxatoH\\Program.cs",
               "ToolTip": "C:\\Users\\egork\\source\\repos\\XaxatoH\\XaxatoH\\Program.cs",
               "RelativeToolTip": "XaxatoH\\Program.cs",
-              "ViewState": "AQIAAAcAAAAAAAAAAAAgwA0AAAAEAAAA",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-30T08:35:42.144Z"
+              "WhenOpened": "2024-11-30T08:35:42.144Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -73,7 +75,7 @@
               "RelativeDocumentMoniker": "XaxatoH\\Controllers\\SearchController.cs",
               "ToolTip": "C:\\Users\\egork\\source\\repos\\XaxatoH\\XaxatoH\\Controllers\\SearchController.cs",
               "RelativeToolTip": "XaxatoH\\Controllers\\SearchController.cs",
-              "ViewState": "AQIAADMAAAAAAAAAAAAuwAYAAAAlAAAA",
+              "ViewState": "AQIAAFYAAAAAAAAAAAAQwF8AAABMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-30T08:12:55.132Z",
               "EditorCaption": ""
