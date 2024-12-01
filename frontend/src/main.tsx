@@ -5,6 +5,7 @@ import App from './app/App'
 import 'material-symbols'
 import '@/app/styles/index.scss'
 import { ReactFlowProvider } from '@xyflow/react'
+import { Provider } from './app/providers/context/ui/Provider'
 
 const container = document.getElementById('root')
 
@@ -19,7 +20,9 @@ const root = createRoot(container)
 root.render(
 	<BrowserRouter>
 		<ReactFlowProvider>
-			<App />
+			<Provider>
+				<App />
+			</Provider>
 		</ReactFlowProvider>
 	</BrowserRouter>
 )
