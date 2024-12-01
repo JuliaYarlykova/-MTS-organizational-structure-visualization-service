@@ -35,8 +35,6 @@
 
 ---
 
-В этом проекте используется [`next/font`](https://extjs.org/docs/basic-features/font-optimization) для автоматической оптимизации и загрузки пользовательского шрифта Google Inter.
-
 ## Скрипты
 
 - `npm run dev` - Запуск React.js в режиме разработки
