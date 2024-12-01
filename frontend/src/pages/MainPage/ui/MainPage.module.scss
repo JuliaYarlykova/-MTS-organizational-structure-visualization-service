@@ -7,3 +7,17 @@
 		font-size: 32px;
 	}
 }
+
+.dataWrap {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+	width: 48%;
+	border-right: solid 1px black;
+}
+
+.container {
+	display: flex;
+	flex-direction: row;
+	gap: 10px;
+}

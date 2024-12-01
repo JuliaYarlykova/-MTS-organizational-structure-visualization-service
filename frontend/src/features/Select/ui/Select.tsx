@@ -7,7 +7,7 @@ import {
 	Button,
 } from '@mui/material'
 import { useState } from 'react'
-import axios from 'axios'
+
 import {
 	blocks,
 	list_city,
@@ -17,6 +17,8 @@ import {
 } from '../lib/data/selectsData'
 
 import cls from './Select.module.scss'
+import { getSelected } from '../api/select'
+import { useMyContext } from '@/app/providers/context/ui/useContext'
 
 export const SelectForm = () => {
 	const [role, setRole] = useState('')
@@ -24,6 +26,7 @@ export const SelectForm = () => {
 	const [department, setDepartment] = useState('')
 	const [city, setCity] = useState('')
 	const [subdivision, setSubdivision] = useState('')
+	const { updateFormData } = useMyContext()
 
 	const handleChange = (
 		event: SelectChangeEvent,
@@ -33,23 +36,15 @@ export const SelectForm = () => {
 	}
 
 	const handleSubmit = async () => {
-		const data = {
-			role,
-			position,
-			department,
-			city,
-			subdivision,
-		}
+		const data: { [key: string]: string | null } = {}
 
-		try {
-			const response = await axios.post(
-				'https://your-api-endpoint.com/submit',
-				data
-			)
-			console.log('Data sent successfully:', response.data)
-		} catch (error) {
-			console.error('Error sending data:', error)
-		}
+		if (department) data.dep = department
+		if (subdivision) data.block = subdivision
+		if (position) data.back = position
+		if (city) data.city = city
+		if (role) data.role = role
+		const response = await getSelected(data)
+		updateFormData(response)
 	}
 
 	return (
@@ -64,6 +59,10 @@ export const SelectForm = () => {
 						label='Роль'
 						onChange={event => handleChange(event, setRole)}
 					>
+						<MenuItem value=''>
+							<em>Выберите...</em>
+						</MenuItem>
+
 						{list_role.map((data, key) => (
 							<MenuItem key={key} value={data}>
 								{data}
@@ -81,6 +80,10 @@ export const SelectForm = () => {
 						label='Должность'
 						onChange={event => handleChange(event, setPosition)}
 					>
+						<MenuItem value=''>
+							<em>Выберите...</em>
+						</MenuItem>
+
 						{list_positions.map((data, key) => (
 							<MenuItem key={key} value={data}>
 								{data}
@@ -98,6 +101,9 @@ export const SelectForm = () => {
 						label='Департамент'
 						onChange={event => handleChange(event, setDepartment)}
 					>
+						<MenuItem value=''>
+							<em>Выберите...</em>
+						</MenuItem>
 						{list_filial.map((data, key) => (
 							<MenuItem key={key} value={data}>
 								{data}
@@ -115,6 +121,9 @@ export const SelectForm = () => {
 						label='Город'
 						onChange={event => handleChange(event, setCity)}
 					>
+						<MenuItem value=''>
+							<em>Выберите...</em>
+						</MenuItem>
 						{list_city.map((data, key) => (
 							<MenuItem key={key} value={data}>
 								{data}
@@ -132,6 +141,9 @@ export const SelectForm = () => {
 						label='Блок'
 						onChange={event => handleChange(event, setSubdivision)}
 					>
+						<MenuItem value=''>
+							<em>Выберите...</em>
+						</MenuItem>
 						{blocks.map((data, key) => (
 							<MenuItem key={key} value={data}>
 								{data}{' '}

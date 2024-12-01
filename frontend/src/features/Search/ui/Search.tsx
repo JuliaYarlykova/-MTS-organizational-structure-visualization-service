@@ -1,31 +1,29 @@
 import { Button, TextField } from '@mui/material'
 import { useState } from 'react'
-import axios from 'axios'
+
 import cls from './Select.module.scss'
+import { getSearched } from '../api/search'
+import { useMyContext } from '@/app/providers/context/ui/useContext'
 
 export const Search = () => {
 	const [fio, setFio] = useState('')
+	const { updateFormData } = useMyContext()
 
-	const handleChange = event => {
+	const handleChange = (
+		event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+	) => {
 		setFio(event.target.value)
 	}
 
-	const handleSubmit = async event => {
+	const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
 		event.preventDefault()
-		try {
-			const response = await axios.post(
-				'https://your-api-endpoint.com/search',
-				{ fio }
-			)
-			console.log('Data sent successfully:', response.data)
-		} catch (error) {
-			console.error('Error sending data:', error)
-		}
+		const response = await getSearched({ str: fio })
+		updateFormData(response)
 	}
 
 	return (
 		<form className={cls.main} onSubmit={handleSubmit}>
-			<h1>Поиск по ФИО</h1>
+			<h3>Поиск по ФИО</h3>
 			<TextField
 				id='outlined-basic'
 				label='ФИО'

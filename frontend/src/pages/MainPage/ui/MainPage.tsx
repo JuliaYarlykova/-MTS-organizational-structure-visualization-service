@@ -1,9 +1,8 @@
 import { Accordion, AccordionDetails, AccordionSummary } from '@mui/material'
 import cls from './MainPage.module.scss'
-import { Employee } from '@/entities/Employee/ui/Employee'
-import { Flow } from '@/entities/Hierarchy'
 import { SelectForm } from '@/features/Select'
 import { Search } from '@/features/Search'
+import { DataPart } from './DataPart'
 
 export const MainPage = () => {
 	return (
@@ -23,6 +22,7 @@ export const MainPage = () => {
 					<SelectForm />
 				</AccordionDetails>
 			</Accordion>
+			<DataPart />
 		</div>
 	)
 }
