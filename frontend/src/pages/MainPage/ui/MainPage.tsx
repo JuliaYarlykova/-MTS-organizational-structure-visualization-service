@@ -44,7 +44,6 @@ export const MainPage = () => {
 					<BlockSelect />
 					<CitySelect />
 					<PositionSelect />
-					<ProjectSelect />
 					<RoleSelect />
 				</AccordionDetails>
 			</Accordion>
